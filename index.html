@@ -23,7 +23,7 @@
     <title>Gráfico</title>
 </head>
 
-<body>
+<body onload="loadGraps()">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">NVD3 Graphic</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -34,8 +34,8 @@
             <ul class="navbar-nav">
                 <li>
                     <button class="btn btn-primary" id="loadGrap">Gráfico 1</button>
-                    <button class="btn btn-primary" id="loadGrap">Gráfico 2</button>
-                    <button class="btn btn-primary" id="loadGrap">Questionário</button>
+                    <button class="btn btn-primary" id="loadGrap2">Gráfico 2</button>
+                    <button class="btn btn-primary" id="loadForm">Questionário</button>
                 </li>
             </ul>
         </div>
@@ -44,14 +44,13 @@
         <br>
         <div class="row">
             <div class="col">
-                
                 <div id="chart">
                     <svg></svg>
                 </div>
+                <div id="chart2">
+                    <svg></svg>
+                </div>
             </div>
-        </div>
-        <div class="row" id="grapPos">
-
         </div>
     </div>
 
