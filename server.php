@@ -1,7 +1,7 @@
 <?php
-    $banco = "nomedobanco";
-    $usuario = "nomeuser";
-    $senha = "1234";
+    $banco = "nvd3";
+    $usuario = "root";
+    $senha = "";
     $servidor = "localhost";
 
     $conn = mysqli_connect($servidor, $usuario, $senha, $banco);
@@ -11,25 +11,23 @@
     }
     if(isset($_POST['enviar'])){
         $nomejogo = $_POST['nomejogo'];
-        $query = "UPDATE nometabela SET total += 1 WHERE nomejogo = '$nomejogo'";
+        $query = "UPDATE jogos SET valor += 1 WHERE nomejogo = '$nomejogo'";
         mysqli_query($conn, $query);
         unlink('data.csv');
         fopen('data.csv','w+');
         fclose('data.csv');
         $file = fopen("data.csv", "w");
 
-        $query2 = "SELECT * FROM nometabela";
+        $query2 = "SELECT * FROM jogos";
 
         while($row = mysqli_fetch_assoc($query2))
         {
-            $nomejogo = $row['nomejogo'];
-            $total = $row['total'];
+            $nomejogo = $row['jogos'];
+            $total = $row['valor'];
 
             fputcsv($file, array($nomejogo, $total));
         }
 
         fclose($file);
     }
-
-
 ?>
