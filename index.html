@@ -23,38 +23,87 @@
     <title>Gráfico</title>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">NVD3 Graphic</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li>
-                    <button class="btn btn-primary" id="loadGrap">Gráfico 1</button>
-                    <button class="btn btn-primary" id="loadGrap">Gráfico 2</button>
-                    <button class="btn btn-primary" id="loadGrap">Questionário</button>
-                </li>
-            </ul>
+<body onload="loadGraps()">
+    <div class="container mt-4 justify-content-center">
+        <div class="col-">
+            <form action="" method="post">
+                <label for="">Questionário</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="top1" id="top1" value="option1" checked>
+                    <label class="form-check-label" for="top1">
+                        Red Dead Redemption 2
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="top2" id="top2" value="option2">
+                    <label class="form-check-label" for="top2">
+                        Call of Duty Modern Warfare
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="top3" id="top3" value="option3" disabled>
+                    <label class="form-check-label" for="top3">
+                        GTA 5
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="top4" id="top4" value="option3" disabled>
+                    <label class="form-check-label" for="top4">
+                        Star Wars Jedi Fallen Order
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="top5" id="top5" value="option3" disabled>
+                    <label class="form-check-label" for="top5">
+                        Fortnite
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="top6" id="top6" value="option3" disabled>
+                    <label class="form-check-label" for="top6">
+                        League of Legends
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="top7" id="top7" value="option3" disabled>
+                    <label class="form-check-label" for="top7">
+                        CS GO
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="top8" id="top8" value="option3" disabled>
+                    <label class="form-check-label" for="top8">
+                        PUBG Lite
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="top9" id="top9" value="option3" disabled>
+                    <label class="form-check-label" for="top9">
+                        PUBG
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="top10" id="top10" value="option3" disabled>
+                    <label class="form-check-label" for="top10">
+                        Minecraft
+                    </label>
+                </div>
+
+            </form>
         </div>
-    </nav>
-    <div class="container">
         <br>
         <div class="row">
             <div class="col">
-                
                 <div id="chart">
+                    <svg></svg>
+                </div>
+                <div id="chart2">
                     <svg></svg>
                 </div>
             </div>
         </div>
-        <div class="row" id="grapPos">
-
-        </div>
     </div>
-
+    <br><br><br>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
