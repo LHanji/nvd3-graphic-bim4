@@ -1,16 +1,22 @@
 var drawGrap = function(){
     nv.addGraph(function() {
-        var chart = nv.models.pieChart()
-            .x(function(d) { return d.label })
-            .y(function(d) { return d.value })
-            .showLabels(true);
+        var chart = nv.models.discreteBarChart()
+          .x(function(d) { return d.label })
+          .y(function(d) { return d.value })
+          .staggerLabels(true)
+          .tooltips(false)
+          .showValues(true)
       
-          d3.select("#chart svg")
-              .datum(grapData)
-            .transition().duration(1200)
-              .call(chart);
+        d3.select('#chart svg')
+          .datum(grapData)
+          .transition().duration(500)
+          .call(chart)
+          ;
+      
+        nv.utils.windowResize(chart.update);
+      
         return chart;
-    });      
+      });           
 }
 $(function(){
     $("#loadGrap").click(function(){
