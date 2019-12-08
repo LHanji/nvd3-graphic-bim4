@@ -12,12 +12,7 @@
 
     if(isset($_POST['enviar'])){
         $nomejogo = $_POST['nomejogo'];
-<<<<<<< HEAD
-
-        $query = "UPDATE nometabela SET total += 1 WHERE nomejogo = '$nomejogo'";
-=======
         $query = "UPDATE jogos SET valor += 1 WHERE nomejogo = '$nomejogo'";
->>>>>>> 3ee1421ad15c5dcf7be1f1e1f8653490ed5045a0
         mysqli_query($conn, $query);
 
         unlink('data.csv');
