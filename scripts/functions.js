@@ -41,5 +41,5 @@ var drawGrap2 = function(){
 function loadGraps(){
     console.log('draw grap');
     drawGrap();
-    drawGrap2();       
+    //drawGrap2();       
 }
