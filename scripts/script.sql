@@ -1,3 +1,4 @@
+create database nvd3
 
 create table jogos(
 	nomejogo varchar(50) not null primary key,
