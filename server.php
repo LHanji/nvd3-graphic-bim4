@@ -12,7 +12,6 @@
 
     $nomejogo = $_POST['nomejogo'];
     $query = "update jogos set valor = (0.001 + valor) where nomejogo = '$nomejogo'";
-    
     mysqli_query($conn, $query);
 
     $file = fopen("data.csv", "w");
