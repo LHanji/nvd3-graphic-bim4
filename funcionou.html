@@ -16,64 +16,87 @@
     <link rel="stylesheet" href="https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
+    <h1 style="text-align: center;">Gráfico sobre Can I Run It</h1>
     <div>
         <svg id="chart">
         </svg>
     </div>
-    <form action="server.php" method="POST">
-        <div>
-            <input type="radio" id="1" name="jogo" value="Red Dead Redemption 2">
-            <label for="1">
-                Red Dead Redemption 2
-            </label>
-            <br>
-            <input type="radio" id="2" name="jogo" value="Call of Duty Modern Warfare">
-            <label for="2">
-                Call of Duty Modern Warfare
-            </label>
-            <br>
-            <input type="radio" id="3"name="jogo" value="GTA 5">
-            <label for="3">
-                GTA 5
-            </label>
-            <br>
-            <input type="radio" id="4" name="jogo" value="Star Wars Jedi Fallen Order">
-            <label for="4">
-                Star Wars Jedi Fallen Order
-            </label>
-            <br>
-            <input type="radio" id="5" name="jogo" value="Fortnite">
-            <label for="5">
-                Fortnite
-            </label>
-            <br>
-            <input type="radio" id="6" name="jogo" value="League of Legends">
-            <label for="6">
-                League of Legends
-            </label>
-            <br>
-            <input type="radio" id="7" name="jogo" value="CS GO">
-            <label for="7">
-                CS GO
-            </label>
-            <br>
-            <input type="radio" id="8" name="jogo" value="PUBG Lite">
-            <label for="8">
-                PUBG Lite
-            </label>
-            <br>
-            <input type="radio" id="9" name="jogo" value="PUBG">
-            <label for="9">
-                PUBG
-            </label>
-            <br>
-            <input type="radio" id="10" name="jogo" value="Minecraft">
-            <label for="10">
-                Minecraft
-            </label>
-            <br>
-            <input class="btn btn-primary" type="submit" value="Enviar">
+    <h5>Que jogo dos top 10 mais testados do site você gostaria de testar também?</h5>
+    <form action="server.php" method="POST" style="text-align: center;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <input type="radio" id="1" name="nomejogo" value="Red Dead Redemption 2">
+                    <label for="1">
+                        Red Dead Redemption 2
+                    </label>
+                    <br>
+                    <input type="radio" id="2" name="nomejogo" value="Call of Duty Modern Warfare">
+                    <label for="2">
+                        Call of Duty Modern Warfare
+                    </label>
+                    <br>
+                    <input type="radio" id="3" name="nomejogo" value="GTA 5">
+                    <label for="3">
+                        GTA 5
+                    </label>
+                    <br>
+                    <input type="radio" id="4" name="nomejogo" value="Star Wars Jedi Fallen Order">
+                    <label for="4">
+                        Star Wars Jedi Fallen Order
+                    </label>
+                    <br>
+                    <input type="radio" id="5" name="nomejogo" value="Fortnite">
+                    <label for="5">
+                        Fortnite
+                    </label>
+                    <br>
+                    <input type="radio" id="6" name="nomejogo" value="League of Legends">
+                    <label for="6">
+                        League of Legends
+                    </label>
+                    <br>
+                    <input type="radio" id="7" name="nomejogo" value="CS GO">
+                    <label for="7">
+                        CS GO
+                    </label>
+                    <br>
+                    <input type="radio" id="8" name="nomejogo" value="PUBG Lite">
+                    <label for="8">
+                        PUBG Lite
+                    </label>
+                    <br>
+                    <input type="radio" id="9" name="nomejogo" value="PUBG">
+                    <label for="9">
+                        PUBG
+                    </label>
+                    <br>
+                    <input type="radio" id="10" name="nomejogo" value="Minecraft">
+                    <label for="10">
+                        Minecraft
+                    </label>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Enviar">
+                </div>
+                <div style="margin-left: 100px; text-align: justify;" class="col">
+                    Trabalho final feito para a disciplina de Desenvolvimento para Web do prof. Renato
+                    - por Arlene Julienne, Lohana Torres e Lucas Hote da 3BINFO 2019.
+                    O gráfico deste trabalho baseia-se no site 'systemrequirementslab' que possui uma ferramenta chamada
+                    'Can I Run It' que escaneia o hardware do usuário e com base nessas informações diz a este que jogos
+                    podem funcionar bem em sua máquina. Os dados usados no gráfico foram os top 10 jogos mais testados
+                    de
+                    novembro~dezembro de 2019 que se encontra na página inicial do site. Com base nesses jogos também
+                    fizemos um pequeno questionário que permite aos usuários que forem usar nosso pequeno projeto
+                    informarem
+                    que jogos da lista gostariam de testar e isso será acrescentado ao resultado que já existe coletado
+                    do
+                    site.
+                    Tecnologias usadas: HTML, Javascript, PHP, mysql, nvd3.js e d3.js.
+                    Site de inspiração: https://www.systemrequirementslab.com/cyri
+                </div>
+            </div>
         </div>
     </form>
 </body>
