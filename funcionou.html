@@ -3,17 +3,80 @@
 
 <head>
     <meta charset="utf-8">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!--Bootstrap-->
 
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.js"></script>
     <link rel="stylesheet" href="https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
-    <svg id="chart">
-        
-    </svg>
+    <div>
+        <svg id="chart">
+        </svg>
+    </div>
+
+        <div>
+            <input type="radio" name="jogo" value="Red Dead Redemption 2">
+            <label for="exampleRadios1">
+                Red Dead Redemption 2
+            </label>
+            <br>
+            <input type="radio" name="jogo" value="Call of Duty Modern Warfare">
+            <label for="exampleRadios1">
+                Call of Duty Modern Warfare
+            </label>
+            <br>
+            <input type="radio" name="jogo" value="GTA 5">
+            <label for="exampleRadios1">
+                GTA 5
+            </label>
+            <br>
+            <input type="radio" name="jogo" value="Star Wars Jedi Fallen Order">
+            <label for="exampleRadios1">
+                Star Wars Jedi Fallen Order
+            </label>
+            <br>
+            <input type="radio" name="jogo" value="Fortnite">
+            <label for="exampleRadios1">
+                Fortnite
+            </label>
+            <br>
+            <input type="radio" name="jogo" value="League of Legends">
+            <label for="exampleRadios1">
+                League of Legends
+            </label>
+            <br>
+            <input type="radio" name="jogo" value="CS GO">
+            <label for="exampleRadios1">
+                CS GO
+            </label>
+            <br>
+            <input type="radio" name="jogo" value="PUBG Lite">
+            <label for="exampleRadios1">
+                PUBG Lite
+            </label>
+            <br>
+            <input type="radio" name="jogo" value="PUBG">
+            <label for="exampleRadios1">
+                PUBG
+            </label>
+            <br>
+            <input type="radio" name="jogo" value="Minecraft">
+            <label for="exampleRadios1">
+                Minecraft
+            </label>
+            <br>
+
+            <input class="btn btn-primary" type="submit" value="Enviar">
+    </div>
+
 </body>
 
 <script type="text/javascript">
@@ -34,24 +97,23 @@
             exampleData[0].values.push(d)
         })
 
-        nv.addGraph(function() {
-		
-        var chart = nv.models.discreteBarChart()
-            .x(function (d) { console.log(d); return d.label })
-            .y(function (d) { return d.value })
-            .staggerLabels(true)
-            .tooltips(false)
-            .showValues(true)
+        nv.addGraph(function () {
 
-        d3.select('#chart')
-             .datum(exampleData)
-             .attr("id", function (d) { console.log(d); })
-         .transition().duration(500)
+            var chart = nv.models.discreteBarChart()
+                .x(function (d) { console.log(d); return d.label })
+                .y(function (d) { return d.value })
+                .staggerLabels(true)
+                .tooltips(false)
+                .showValues(true)
+
+            d3.select('#chart')
+                .datum(exampleData)
+                .attr("id", function (d) { console.log(d); })
+                .transition().duration(500)
                 .call(chart);
-
-        nv.utils.windowResize(chart.update);
-        return chart;
-  });
+            nv.utils.windowResize(chart.update);
+            return chart;
+        });
     });
 </script>
 

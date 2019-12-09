@@ -10,27 +10,23 @@
         die(mysqli_error($conn));
     }
 
-    if(isset($_POST['enviar'])){
-        $nomejogo = $_POST['nomejogo'];
-        $query = "UPDATE jogos SET valor += 1 WHERE nomejogo = '$nomejogo'";
-        mysqli_query($conn, $query);
+    $nomejogo = $_POST['nomejogo'];
+    $query = "update jogos set valor = (0.001 + valor) where nomejogo = '$nomejogo'";
+    
+    mysqli_query($conn, $query);
 
-        unlink('data.csv');
-        fopen('data.csv','w+');
-        fclose('data.csv');
+    $file = fopen("data.csv", "w");
 
-        $file = fopen("data.csv", "w");
+    $query2 = "SELECT * FROM jogos";
+    $result = mysqli_query($conn, $query2);
 
-        $query2 = "SELECT * FROM jogos";
-
-        while($row = mysqli_fetch_assoc($query2))
-        {
-            $nomejogo = $row['jogos'];
-            $total = $row['valor'];
-
-            fputcsv($file, array($nomejogo, $total));
-        }
-
-        fclose($file);
+    fputcsv($file, array("label","value"));
+    while($row = mysqli_fetch_assoc($result))
+    {
+        fputcsv($file, $row);
     }
+
+    fclose($file);
+
+    header('location: funcionou.html');
 ?>
